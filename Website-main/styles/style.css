@@ -1,0 +1,331 @@
+body
+{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: none;
+  color: initial;
+}
+/* Style the header links */
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+.titre h1
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+.main
+{
+    background: white;
+    padding: 0px;
+    margin-left: 20%;
+    margin-right:20%;
+}
+.footer{
+  padding: 0px;
+  margin-left: 20%;
+  margin-right:20%;
+  background: white;
+
+}
+.footer p 
+{
+        /* Uniquement centrer le formulaire sur la page */
+        margin: 0 auto;
+        width: 400px;
+        /* Encadré pour voir les limites du formulaire */
+        padding: 1em;
+      }
+form {
+    /* Uniquement centrer le formulaire sur la page */
+    margin: 0 auto;
+    width: auto;
+    /* Encadré pour voir les limites du formulaire */
+    padding: auto;
+    border: 1px solid black;
+    border-radius: 1em;
+  }
+  
+  form div + div {
+    margin-top: 1em;
+    margin-right: auto;
+  }
+  
+  label {
+    /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+  
+  input, textarea {
+    /* Pour s'assurer que tous les champs texte ont la même police.
+       Par défaut, les textarea ont une police monospace */
+    font: 1em sans-serif;
+  
+    /* Pour que tous les champs texte aient la même dimension */
+    width: 300px;
+    box-sizing: border-box;
+  
+    /* Pour harmoniser le look & feel des bordures des champs texte */
+    border: 1px solid #999;
+  }
+  
+  input:focus, textarea:focus {
+    /* Pour souligner légèrement les éléments actifs */
+    border-color: #000;
+  }
+  
+  textarea {
+    /* Pour aligner les champs texte multi‑ligne avec leur étiquette */
+    vertical-align: top;
+  
+    /* Pour donner assez de place pour écrire du texte */
+    height: 5em;
+  }
+  .button {
+    /* Pour placer le bouton à la même position que les champs texte */
+    padding-left: 90px; /* même taille que les étiquettes */
+  }
+  button {
+    /* Cette marge supplémentaire représente grosso modo le même espace que celui
+       entre les étiquettes et les champs texte */
+    margin-left: .5em;
+  }
+/*grid*/
+.image-grid {
+  /* Arrange children using flexbox */
+  display: flex;
+  /* ALlow images to display on multiple lines rather than a single line */
+  flex-wrap: wrap;
+  /* Container should take up only 90% of the browser, leave 5% space on each side */
+  width: 90%;
+  /* Center container */
+  margin: 0 auto;
+}
+.grid-image {
+  /* images display inline by default and act like text. We want them to act like divs, so display block */
+  display: block;
+  /* our width setting for mobile, one image per line */
+  flex-basis: 100%;
+  /* provide some space between our images */
+  padding: 10px;
+  /* ensure padding doesn't cause images to wrap, it should be within the width rather than in addition */
+  box-sizing: border-box;
+}
+
+/* increase images per line as browser gets larger using media queries
+   this first query makes two images per line at 640px width */
+@media only screen and (min-width: 640px) {
+  .grid-image {
+    flex-basis: 50%;
+  }
+}
+
+/* three images per line when browser width exceeds 960px */
+@media only screen and (min-width: 960px) {
+  .grid-image {
+    flex-basis: 33.333%;
+  }
+}
+
+/* four images per line when browser width exceeds 1280px */
+@media only screen and (min-width: 1280px) {
+  .grid-image {
+    flex-basis: 25%;
+  }
+}
+
+/* five images per line when browser width exceeds 1600px */
+@media only screen and (min-width: 1600px) {
+  .grid-image {
+    flex-basis: 20%;
+  }
+}
+figcaption{
+  text-align: center;
+}
+/* **********************Boutton****************  */
+.produits button {
+  background-color:rgb(0, 101, 119);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* **********************page produits****************  */
+.produits {
+  border: 3px solid;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.produits button
+{
+  
+  float: right;
+}
+.produits p 
+{
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-left: 2%;
+
+}
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+.main a:link {
+  color: #265301;
+}
+
+.main a:visited {
+  color: #437A16;
+}
+
+.main a:focus {
+  border-bottom: 1px solid;
+  background: #BAE498;
+}
+
+.main a:hover {
+  border-bottom: 1px solid;
+  background: #CDFEAA;
+}
+
+.main a:active {
+  background: #265301;
+  color: #CDFEAA;
+}
+
+
+
+
+					/* Cart */
+
+.div-cart {
+    border: 1px solid black;
+    width: 900px;
+    margin-left: 25%;
+    border-radius: 7px;
+    padding: 50px;
+    margin-top: 50px;
+    display: block;
+}
+
+.div-product {
+    margin-top: 5px;
+    width: 700px;
+    display: inline-block;
+    border: 0.5px solid black;
+    border-radius: 7px;
+    margin-left: 12%;
+}
+
+.button-cart {
+	background-color:rgb(0, 101, 119);
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 20px;
+	cursor: pointer;
+	width:200px;
+    margin-top: 100px;
+    margin-left: 600px;
+}
+
+.button-supp {
+    border: none;
+    color: red;
+    cursor: pointer;
+    float: left;
+    margin-left: 250px;
+    margin-top: 30px;
+}
+
+.price-quantity {
+    margin-right: 250px;
+    width: 50px;
+    height: 30px;
+    float:right;
+    padding-left:20px;
+}
+
+.p-totalPrice {
+    font-size: 25px;
+    margin-top: 40px;
+    float: right;
+    margin-right: 380px;
+}
+
+p {
+    cursor: default;
+}

@@ -1,0 +1,41 @@
+
+
+Impossible d'utiliser utilisateur root pour la base de données, donc il faut que tu te créer un utilisateur "user" sans mot de passe (soit directement  depuis mySQL 
+donc "sudo mysql -u root -p" et ensuite tu tapes to mdp, ensuite "CREATE USER 'user'@'localhost' IDENTIFIED BY ''; " 
+Puis tu lui donnes les droits: "GRANT ALL PRIVILEGIES ON *.* TO 'user'@'localhost' WITH GRANT OPTION; "
+
+pour que les scripts que j'ai ecrits puissent marcher. (ou alors depuis phpMyAdmin tu le fais avec une interface graphique)
+
+Ensuite, pour creer la base de données, tu te connectes: "mysql -u user"
+"source chemin_vers_tp/database/eBiking.sql"
+Ca creer la base de données ainsi que la table, vides.
+Tu vas voir: la BDD est de la forme:
+
+id || name || images (sous forme d'un string dont les chemins sont séparés par des virgules) || price || shortDescription || stock || advantages || tetchnicalInfos || productCompisition
+
+
+
+tu vas voir, ensuite si tu fais "SHOW TABLES;" que tu ca aura bien créé la bdd. 
+Ensuite, va dans le dossier database (dans le terminal) et tapes "php eBiking.php": ca remplit la bdd avec les infos du fichier json.
+Verifie si la base de données est bien remplie comme il faut
+
+
+
+
+tu pourras ensuite faire ta partie car la bdd est faite.
+
+Si tu veux utiliser la bdd, pas besoin de te reconnecter tout ca, fais juste "require(db.php);" puis "$db = new Database();" "$db->openDB();" et quand t'as finis "$db->closeDB();"
+comme ca ca gere automatiquement la connection a la bdd. 
+
+J'ai deja fait tout pour les requetes de recupération de produit. Pour recupérer un produit si t'as besoin tu fais "$product = $db->getProductFromDB();" et ensuite $product est un tableau dans lequel tu recup les elements que tu veux genre $name = $product['name']...
+
+
+
+
+
+
+J'ai fait la gestion de la bdd ainsi que l'affichage des produits en recuperant depuis la base de données sur la page sur lql y'a tous les produits et ainsi que sur toutes les pages produits (donc supprimé le fichier varSession.inc.php)
+
+J'ai refait le panier aussi, tout s'affiche bien quand on ajoute au panier depuis les pages produits (en choisissant directement la quantité depuis la page produit) + on peut mtn, depuis la page sur laquelle il y a tous les produits, ajouter au panier en appuyant sur Add to cart.
+
+De plus, la modification du stock quand on valide la commande est gérée.
